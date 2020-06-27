@@ -1,0 +1,17 @@
+def find_sum(l, ans):
+    i = 0
+    added = []
+    while i < len(l):
+        j = 0
+        while j<len(l):
+            psum = l[i]+l[j]
+            if psum == ans and i!=j:
+                if l[i] not in added and l[j] not in added:
+                    added.append(l[i])
+                    added.append(l[j])
+            j += 1
+        i += 1
+    if len(added) >= 2:
+        return added
+    else:
+        return('No such sum in list')
