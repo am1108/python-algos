@@ -1,0 +1,20 @@
+def pal_sub(s, a):
+    a = int(a)
+    i = 0
+    j = 0
+    subs = []
+    new = []
+    string = ''
+    while i < len(s) and j < len(s):
+        j = i + a
+        subs.append(s[i:j])
+        i+=1
+    for sub in subs:
+        if sub == sub[::-1] and sub not in new:
+            new.append(sub)
+    for s in new:
+        string += s + ' '
+    return string
+key = input('Enter a string:\n')
+num = int(input('Enter a substring length:\n'))
+print('All the substring palindromes:', pal_sub(key, num))
