@@ -1,0 +1,19 @@
+def move_zero(arr):
+    zeros = []
+    new = []
+    newer = []
+    for el in arr:
+        if el == 0:
+            zeros.append(el)
+    for i in range(len(arr)):
+        mnm = min(arr)
+        new.append(mnm)
+        arr.remove(mnm)
+    for el in new:
+        if el != 0:
+            newer.append(el)
+    for zero in zeros:
+        newer.append(zero)
+    return newer
+list = [0, 0, 0, 0, 1, 23, 78, 4, 8, 24]
+print(move_zero(list))
